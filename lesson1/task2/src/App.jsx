@@ -12,9 +12,9 @@ export default class App extends Component {
   render() {
     return (
       <div className="page">
-        <DataContext.Provider value={this.state.userData}>
+        <UserContext.Provider value={this.state.userData}>
           <Header />
-        </DataContext.Provider>
+        </UserContext.Provider>
       </div>
     );
   }
