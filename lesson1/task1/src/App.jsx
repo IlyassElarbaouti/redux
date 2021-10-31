@@ -17,11 +17,11 @@ export default class App extends Component {
     return (
         <>
         <ThemeContext.Provider value={this.state.theme}>
-          <ThemedButton onClick={this.toggleTheme} className="btn">
+          <ThemedButton onClick={this.toggleTheme} >
             Dynamic Theme
           </ThemedButton>
         </ThemeContext.Provider>
-        <ThemedButton onClick={this.toggleTheme} className="btn">
+        <ThemedButton onClick={this.toggleTheme}>
           Default Theme
         </ThemedButton>
       </>
