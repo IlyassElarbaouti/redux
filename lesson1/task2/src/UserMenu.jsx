@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { UserContext } from './user-context';
+import { UserContext } from './user-context.js';
 
 export default class UserMenu extends Component {
     render() {
