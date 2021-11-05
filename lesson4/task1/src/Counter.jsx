@@ -7,9 +7,9 @@ const Counter = ({counter , incr ,decr , reset}) => {
         <button className="counter__button" onClick={decr}>
           -
         </button>
-        <p onClick={reset} className="counter__value">
+        <span onClick={reset} className="counter__value">
           {counter}
-        </p>
+        </span>
         <button className="counter__button" onClick={incr}>
           +
         </button>
