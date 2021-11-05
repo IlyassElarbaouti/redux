@@ -1,31 +1,27 @@
 import React from 'react'
-import {useDispatch,useSelector} from 'react-redux'
+import {connect} from 'react-redux'
 
-const Counter = () => {
-    const dispatch = useDispatch()
-    const counter= useSelector(state=>state.counter)
+const Counter = ({counter , incr ,decr , reset}) => {
     return (
       <div className="counter">
-        <button
-          className="counter__button"
-          onClick={() => dispatch({ type: "DECREMENT" })}
-        >
+        <button className="counter__button" onClick={decr}>
           -
         </button>
-        <p
-          onClick={() => dispatch({ type: "RESET" })}
-          className="counter__value"
-        >
+        <p onClick={reset} className="counter__value">
           {counter}
         </p>
-        <button
-          className="counter__button"
-          onClick={() => dispatch({ type: "INCREMENT" })}
-        >
+        <button className="counter__button" onClick={incr}>
           +
         </button>
       </div>
     );
 }
+const mapDispatch = dispatch =>{return {
+  incr: () => dispatch({ type: "INCREMENT" }),
+  decr: () => dispatch({ type: "DECREMENT" }),
+  reset: () => dispatch({ type: "RESET" }),
+};}
+const mapState=state=>{return {counter:state}}
+const connector = connect(mapState,mapDispatch)
 
-export default Counter
+export default connector(Counter)
