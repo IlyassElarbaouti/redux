@@ -1,11 +1,11 @@
 import { SET_USER, REMOVE_USER } from './user.actions.js';
 
-export const userReducer = (state = null, action) => {
-  switch (action.type) {
+export const userReducer = (state = null, {type,payload}) => {
+  switch (type) {
     case SET_USER: {
       return {
         ...state,
-        ...action.payload.userData,
+        ...payload.userData,
       };
     }
     case REMOVE_USER:
