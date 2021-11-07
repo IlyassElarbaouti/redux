@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import User from "./User";
-import Pagination from "./Pagination.jsx";
-import { goNext, goPrev } from "../user.actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import User from './User';
+import Pagination from './Pagination.jsx';
+import { goNext, goPrev } from '../user.actions';
 
 const ITEMS_PER_PAGE = 3;
 
@@ -22,17 +22,14 @@ const UsersList = ({ users, goPrevPage, goNextPage, currentPage }) => {
       />
 
       <ul className="users">
-        {usersToRender.map((user) => (
+        {usersToRender.map(user => (
           <User key={user.id} name={user.name} age={user.age} />
         ))}
       </ul>
     </div>
   );
 };
-const mapState = (state) => ({
-  users: state.users.usersList,
-  currentPage: state.users.currentPage,
-});
+const mapState = state => ({ users: state.users.usersList, currentPage: state.users.currentPage });
 
 const mapDispatch = {
   goNextPage: goNext,

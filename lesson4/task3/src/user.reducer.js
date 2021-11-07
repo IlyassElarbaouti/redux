@@ -1,11 +1,13 @@
+import { GO_PREV, GO_NEXT } from './user.actions';
 import users from './users';
+
 const initialState = {
   users: { usersList: [...users], currentPage: 0 },
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'GO_PREV': {
+    case GO_PREV: {
       return {
         ...state,
         users: {
@@ -14,7 +16,7 @@ const userReducer = (state = initialState, action) => {
         },
       };
     }
-    case 'GO_NEXT':
+    case GO_NEXT:
       return {
         ...state,
         users: {
