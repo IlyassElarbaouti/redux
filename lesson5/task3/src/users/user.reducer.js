@@ -5,10 +5,10 @@ const initialState = {
   users: { filterText: '', usersList: users },
 };
 
-const userReducer = (state = initialState, action) => {
-  switch (action.type) {
+const userReducer = (state = initialState, {type,payload}) => {
+  switch (type) {
     case CHANGE_FILTER: {
-      const searchText = action.payload;
+      const searchText = payload;
 
       let filteredList = users;
 
